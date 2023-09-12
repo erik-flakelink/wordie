@@ -1,6 +1,7 @@
 import random
 import time
 import os
+firsttime = True
 wordlist = ["Ale","Zero","Hamm","Ruble","Denim","Jeans","Hexadecimal","Talkative","Crystal","Coincide","Practice","Distributor","Explain","Enthusiasm","Suffering","Decoration","Innocent","Knowledge","Infection","Traction","Innocent","Migration","Sculpture","Survival"]
 wordie = wordlist[random.randint(0, len(wordlist) - 1)]
 print("WORDIE")
@@ -52,7 +53,9 @@ def configure_word():
         return worde
     elif choice == "[3]":
         r_as_you_go = True
-        correct_pos.append(random.randint(1, len(wordie)))
+        if firsttime == True:
+            correct_pos.append(random.randint(1, len(wordie)))
+            firsttime = False
         pos = 0
         wordo = []
         for i in wordie:
